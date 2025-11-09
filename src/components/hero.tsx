@@ -8,7 +8,7 @@ function hero() {
             Welcome to <span className="text-blue-700">Employee Leave Management System</span>
           </h2>
           <p className="text-gray-600 mb-8 text-lg">
-            Simplify leave requests, approvals, and tracking — all in one easy-to-use platform.
+            Simplify leave requests, approvals, and tracking all in one easy-to-use platform.
           </p>
           <div className="flex space-x-4">
             <button className="bg-blue-600 text-white rounded-xl px-6 py-3 hover:bg-blue-700 transition">

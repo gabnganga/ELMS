@@ -1,17 +1,21 @@
 import Navbar from './nav'
-import Hero from './hero'
-import Features from './features'
+import Hero from './landingpage/hero'
+import Features from './landingpage/features'
 import Footer from './footer'
-import Testmonials from './testmonials'
+import Testmonials from './landingpage/testmonials'
 
-function landingpage() {
+
+
+const landingpage = () => {
   return (
-    <>
+       <>
       <Navbar />
       <Hero />
         <Features />
-        <Testmonials/>
+        <Testmonials/> 
+
         <Footer />
+      
         
     </>
   )

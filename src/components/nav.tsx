@@ -1,35 +1,31 @@
+import { NavLink } from "react-router"
+import logo from "../assets/images/logo.png"
 
 
-function nav() {
+
+const nav = () => {
   return (
-  
-    <div>
+        <div className="fixed top-0 left-0 right-0 bg-white mb-60 flex items-center  justify-between px-10 py-6 border-b border-gray-200">
     
-      <header className="flex items-center justify-between px-10 py-6 border-b border-gray-200">
-        <div className="flex items-center space-x-3">
-          
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-8 h-8 text-blue-600"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <circle cx="12" cy="12" r="9" strokeWidth="2" />
-            <path strokeWidth="2" strokeLinecap="round" d="M12 7v5l3 2" />
-          </svg>
-          <h1 className="text-2xl font-bold text-blue-700">ELMS</h1>
+    <div className="flex items-center space-x-3"> 
+      <img src={logo} alt="Logo" className="w-30 h-10"/>
+      
         </div>
 
         <nav className="space-x-8 text-gray-700 font-medium">
+          <a href="#home" className="hover:text-blue-600">Home</a>
           <a href="#features" className="hover:text-blue-600">Features</a>
-          <a href="#about" className="hover:text-blue-600">About</a>
-          <a href="#contact" className="hover:text-blue-600">Contact</a>
+         <a href="#footer" className="hover:text-blue-600">Contacts</a>
+          <NavLink to="/register">
+          <button className="bg-blue-600 text-white px-4 py-2 rounded-xl hover:bg-blue-700 transition">
+            Register
+          </button></NavLink>
+          <NavLink to="/login">
           <button className="bg-blue-600 text-white px-4 py-2 rounded-xl hover:bg-blue-700 transition">
             Login
-          </button>
+          </button></NavLink>
         </nav>
-      </header>
+     
     </div>
   )
 }

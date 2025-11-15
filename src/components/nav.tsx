@@ -13,7 +13,11 @@ const nav = () => {
         </div>
 
         <nav className="space-x-8 text-gray-700 font-medium">
-          <a href="#home" className="hover:text-blue-600">Home</a>
+
+          <NavLink to="/" className="hover:text-blue-600">
+            Home
+          </NavLink>
+
           <a href="#features" className="hover:text-blue-600">Features</a>
          <a href="#footer" className="hover:text-blue-600">Contacts</a>
           <NavLink to="/register">

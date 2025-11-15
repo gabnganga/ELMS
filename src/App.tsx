@@ -2,6 +2,8 @@ import Landingpage from "./components/landingpage"
 
 import { createBrowserRouter } from 'react-router'
 import { RouterProvider } from 'react-router/dom'
+import Register from "./components/auth/register"
+import Login from "./components/auth/login"
 
 
 
@@ -15,12 +17,12 @@ function App() {
 
        {
       path: '/login',
-      element: <p>Hello I will login later</p>
+      element: <Login/>
     },    
     
     {
       path: '/register',
-      element: <p>Hahaha I will register</p>
+      element: <Register/>
     },
            {
       path: '*',

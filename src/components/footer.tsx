@@ -34,7 +34,7 @@ const footer = () => {
           type="text"
           placeholder="username@company"
           className="input input-bordered join-item" />
-        <button className="btn btn-primary join-item">Subscribe</button>
+        <button type="button" className="btn btn-primary join-item">Subscribe</button>
       </div>
     </fieldset>
   </form>

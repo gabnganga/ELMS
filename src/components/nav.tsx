@@ -14,7 +14,7 @@ const nav = () => {
 
         <nav className="space-x-8 text-gray-700 font-medium">
 
-          <NavLink to="/" className="hover:text-blue-600">
+          <NavLink to="/"  className="hover:text-blue-600"> 
             Home
           </NavLink>
 

@@ -4,9 +4,13 @@ import { useForm, type SubmitHandler } from 'react-hook-form'
 import * as yup from "yup"
 import { yupResolver } from "@hookform/resolvers/yup"
 import { Link } from "react-router"
+import { loginAPI } from "../../features/auth/loginAPI"
+import { toast } from "sonner"
+import { useNavigate } from "react-router"
+import { useDispatch } from "react-redux";
+import { loginSuccess } from "../../features/auth/userslice";
 
-
-type RegisterInputs = {
+type LoginInputs = {
 
     email: string
     password: string
@@ -15,27 +19,47 @@ type RegisterInputs = {
 
 const schema = yup.object({
  email: yup.string().email('Invalid email').max(100, 'Max 100 characters').required('Email is required'),
- password: yup.string().min(6, 'Min 6 characters').max(255, 'Max 255 characters').required('Password is required'),
+ password: yup.string().min(5, 'Min 5 characters').max(255, 'Max 255 characters').required('Password is required'),
 })
 
 
-const Register = () => {
-   
+const Login= () => {
+    const navigate = useNavigate()
+    const dispatch = useDispatch();
+
+    const [loginUser, {isLoading} ] = loginAPI.useLoginUserMutation() 
    
     const {
         register,
         handleSubmit,
         formState: { errors }
-    } = useForm<RegisterInputs>({
+    } = useForm<LoginInputs>({
         resolver: yupResolver(schema)
     })
 
-    const onSubmit: SubmitHandler<RegisterInputs> = async (data) => {
-        
-            const response = await(data)
-            console.log("Response", response);
-          
+    const onSubmit: SubmitHandler<LoginInputs> = async (data) => {
+       try {
+            const response = await loginUser(data).unwrap()
+            //console.log("Response", response)
+            toast.success(response.message)
+            
+             dispatch(loginSuccess(response))
 
+
+
+            
+            if (response.user.role === 'Admin') {
+                navigate('/admin/dashboard/requests')
+            } else if (response.user.role === 'Employee') {
+                navigate('/employee/dashboard/requests')
+            }
+
+
+
+       } catch (error: any) {
+            console.error("Error", error)
+            toast.error(error.data.error)
+    }
     }
 
     return (
@@ -78,8 +102,16 @@ const Register = () => {
 
 
 
-                        <button type="submit" className=" w-full mt-4 bg-blue-600 text-white rounded-xl px-6 py-3 hover:bg-blue-700 transition" >
-                            Login
+                        <button type="submit" className=" w-full mt-4 bg-blue-600 text-white rounded-xl px-6 py-3 hover:bg-blue-700 transition" disabled={isLoading}>
+                            {
+                                isLoading ? (
+                                    <>
+                                    <span className="loading loading-spinner text-primary"/>  please wait...
+                                    </>
+                                ) : (
+                                    'Login'
+                                )
+                            }
                          
                         </button>
 
@@ -93,4 +125,4 @@ const Register = () => {
         </>
     )
 }
-export default Register
+export default Login

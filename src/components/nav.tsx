@@ -8,24 +8,24 @@ const nav = () => {
         <div className="fixed top-0 left-0 right-0 z-10 bg-white mb-60 flex items-center  justify-between px-10 py-6 border-b border-gray-200">
     
     <div className="flex items-center space-x-3"> 
-      <img src={logo} alt="Logo" className="w-30 h-10"/>
+      <img src={logo} alt="Logo" className="w-20 h-7 md:w-30 md:h-10 "/>
       
         </div>
 
-        <nav className="space-x-8 text-gray-700 font-medium">
+        <nav className="space-x-8 text-gray-700 font-small md:font-medium">
 
-          <NavLink to="/"  className="hover:text-blue-600"> 
+          <NavLink to="/"  className="hover:text-blue-600 hidden md:inline-block"> 
             Home
           </NavLink>
 
-          <a href="#features" className="hover:text-blue-600">Features</a>
-         <a href="#footer" className="hover:text-blue-600">Contacts</a>
-          <NavLink to="/register">
-          <button className="bg-blue-600 text-white px-4 py-2 rounded-xl hover:bg-blue-700 transition">
+          <a href="#features" className="hover:text-blue-600 hidden md:inline-block">Features</a>
+         <a href="#footer" className="hover:text-blue-600 hidden md:inline-block">Contacts</a>
+        {/*  <NavLink to="/register">
+         <button className="bg-blue-600 text-white px-2 md:px-4 py-1 md:py-2 rounded-xl hover:bg-blue-700 transition">
             Register
-          </button></NavLink>
+          </button></NavLink> */}
           <NavLink to="/login">
-          <button className="bg-blue-600 text-white px-4 py-2 rounded-xl hover:bg-blue-700 transition">
+          <button className="bg-blue-600 text-white px-2 md:px-4 py-1 md:py-2 rounded-xl hover:bg-blue-700 transition">
             Login
           </button></NavLink>
         </nav>

@@ -9,7 +9,7 @@ import Contacts from "./contacts"
 function testmonials() {
   return (
    <section id="testimonials" className="px-10 md:px-20 py-16 bg-white text-center">
-  <h3 className="text-3xl font-bold text-blue-700 mb-10">What Our Users Say</h3>
+  <h3 className="text-2xl md:text-3xl font-bold text-blue-700 mb-10">What Our Users Say</h3>
 
 
      <div className="grid md:grid-cols-4 gap-10 mb-10">
@@ -47,7 +47,7 @@ function testmonials() {
   </p> 
 
   <div className="flex gap-6">
-  <Link to="/register">
+  <Link to="/">
   <button
       className="bg-white text-blue-700 font-semibold px-8 py-3 rounded-xl shadow hover:bg-blue-50 transition"
   >

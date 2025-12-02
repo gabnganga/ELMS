@@ -7,17 +7,17 @@ function hero() {
 
         <div className="md:w-1/2">
 
-          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-6">
+          <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-3 md:mb-6">
             Welcome to <span className="text-blue-700">Employee Leave Management System</span>
           </h2>
 
-          <p className="text-gray-600 mb-8 text-lg">
+          <p className="text-gray-600 mb-4 md:mb-8 text-lg">
             Simplify leave requests, approvals, and tracking all in one easy-to-use platform.
           </p>
 
           <div className="flex space-x-4 ">
             
-              <Link to="/register">
+              <Link to="/">
             <button className="bg-blue-600 text-white rounded-xl px-6 py-3 hover:bg-blue-700 transition">
               Get Started
             </button></Link>

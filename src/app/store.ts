@@ -3,7 +3,8 @@ import { combineReducers, configureStore } from "@reduxjs/toolkit"
 import { loginAPI } from "../features/auth/loginAPI"
 import { persistReducer, persistStore } from "redux-persist"
 import userSlice from "../features/auth/userslice"
-
+import { leaverequestAPI } from "../features/leaves/leaverequestAPI"
+import { employeesAPI } from "../features/employees/employeesAPI"
 
 
 
@@ -17,6 +18,9 @@ const persistConfig = {
 const rootReducer = combineReducers({ //combining all reducers into one root reducer
 
     [loginAPI.reducerPath]: loginAPI.reducer,
+    [leaverequestAPI.reducerPath]: leaverequestAPI.reducer,
+    [employeesAPI.reducerPath]: employeesAPI.reducer,
+  
     user: userSlice
 
 })
@@ -29,6 +33,9 @@ export const store = configureStore({
     })
         
         .concat(loginAPI.middleware)
+        .concat(leaverequestAPI.middleware)
+        .concat(employeesAPI.middleware)
+
        
     // 
 })

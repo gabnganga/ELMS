@@ -1,5 +1,5 @@
 import { Outlet } from "react-router"
-import Navbar from "../../../nav"
+import Navbar from "../../../dashnav"
 
 import AdminDrawer from "../aside/admindrawer"
 import { useState } from "react";

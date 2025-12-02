@@ -115,8 +115,8 @@ const Login= () => {
                          
                         </button>
 
-                        <p className="text-center">Don't have an account? <p className="text-blue-600 hover:underline">
-                            <Link to="/register">Register here.</Link></p></p>
+                        <p className="text-center">Don't have an account? <span className="text-blue-600 hover:underline">
+                            <Link to="/register">Register here.</Link></span></p>
                     </form>
 
                 </div>

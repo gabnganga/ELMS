@@ -1,5 +1,4 @@
 import Landingpage from "./components/landingpage"
-
 import { createBrowserRouter } from 'react-router'
 import { RouterProvider } from 'react-router/dom'
 import Register from "./components/auth/register"
@@ -9,6 +8,12 @@ import Admindashboard from "./components/dashboards/admindashboard/content/admin
 import Employeedashboard from "./components/dashboards/Employeedashboard/content/empoyeedashboard"
 import { useSelector } from "react-redux"
 import type { RootState } from "./app/store"
+import Leaverequest from "./components/dashboards/admindashboard/content/leaverequests/leaverequest"
+import Employees from "./components/dashboards/admindashboard/content/employees/employees"
+import Reports from "./components/dashboards/admindashboard/content/reports/report"
+import Profile from "./components/dashboards/admindashboard/content/profile/profile"
+import Logout from "./components/dashboards/admindashboard/content/logout"
+import Lrequests from "./components/dashboards/Employeedashboard/content/leaverequests/lrequests"
 
 
 function App() {
@@ -40,25 +45,26 @@ function App() {
       children:[
         {
           path: 'requests',
-          element: <div>Admin Requests Page</div>
+          element: <Leaverequest/>
         },
         {
           path: 'employees',
-          element: <div>Admin Employees Page</div>
+          element: <Employees/>
         },
                 {
           path: 'reports',
-          element: <div>Admin Reports Page</div>
+          element: <Reports/>
         },
                 {
           path: 'profile',
-          element: <div>Admin Profile Page</div>
+          element:<Profile/>
         },
-                {
-          path: 'settings',
-          element: <div>Admin Settings Page</div>
+                        {
+          path: 'logout',
+          element:<Logout/>
         },
-      
+
+
       ]
     },
          {
@@ -67,17 +73,18 @@ function App() {
             children:[
         {
           path: 'requests',
-          element: <div>Employee Requests Page</div>
+          element: <Lrequests/>
         },
         
                 {
           path: 'profile',
-          element: <div>Employee Profile Page</div>
+          element: <Profile/>
         },
-                {
-          path: 'settings',
-          element: <div>Employee Settings Page</div>
+                        {
+          path: 'logout',
+          element: <Logout/>
         },
+
       
       ]
     },

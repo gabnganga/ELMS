@@ -22,11 +22,7 @@ export const drawerData = [
         name: "Profile",
         link: "profile"
     },
-                {
-        id: "Settings",
-        name: "Settings",
-        link: "settings"
-    },
+
                 {
         id: "Logout",
         name: "Logout",

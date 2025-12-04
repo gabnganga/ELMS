@@ -50,7 +50,7 @@ const employees = () => {
         { employeesError && <p className="text-red-700 font-bold">Error fetching employees........</p>}
         {employeesData && employeesData.data && employeesData.data.length > 0 ? (
             <div>
-             <table className="table-xl">
+             <table className="table-xl" data-test='employees-table'>
                 <thead>
                     <tr className="bg-blue-600 text-white text-md lg:text-lg">
                         <th className="px-8 py-2">Staff ID</th>
@@ -95,7 +95,7 @@ const employees = () => {
                     ))}
                 </tbody>
              </table>
-             <button className="btn btn-wide bg-blue-500 text-white px-2 py-1 mr-2 rounded hover:bg-blue-600"   onClick={() => setShowCreateModal(true)} >Add New Employee</button>
+             <button className="btn btn-wide bg-blue-500 text-white px-2 py-1 mr-2 rounded hover:bg-blue-600" data-test='new-employee'  onClick={() => setShowCreateModal(true)} >Add New Employee</button>
                {showCreateModal && (
             <CreateEmployeeModal onClose={() => setShowCreateModal(false)} />
 )}       

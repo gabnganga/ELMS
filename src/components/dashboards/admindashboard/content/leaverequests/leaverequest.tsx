@@ -60,11 +60,12 @@ const filteredRequests = LeaveRequestdata?.data
                                 className="input input-bordered w-full max-w-xs"
                                 value={searchTerm}
                                 onChange={(e) => setSearchTerm(e.target.value)}
+                                data-test='searchbar'
                             />
 
                             {/* Filter Buttons */}
                             <div className="flex gap-2">
-                                {["All", "Pending", "Approved", "Rejected"].map((status) => (
+                                                          {["All", "Pending", "Approved", "Rejected"].map((status) => (
                                 <button
                                     key={status}
                                     onClick={() => setFilterStatus(status)}
@@ -73,6 +74,7 @@ const filteredRequests = LeaveRequestdata?.data
                                         ? "bg-blue-600 text-white"
                                         : "bg-gray-200 text-black hover:bg-gray-300"
                                     }`}
+                                    data-test='filter'
                                 >
                                     {status}
                                 </button>
@@ -81,7 +83,7 @@ const filteredRequests = LeaveRequestdata?.data
                             </div>
 
                 
-             <table className="table-xs">
+             <table className="table-xs" data-test='requests' >
                 <thead>
                     <tr className="bg-blue-600 text-white text-md lg:text-lg">
                         <th className="px-4 py-2">Staff ID</th>

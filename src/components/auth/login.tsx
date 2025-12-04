@@ -71,7 +71,7 @@ const Login= () => {
 
 
                 <div className="w-full max-w-lg p-8 rounded-xl shadow-lg bg-white  ">
-                    <h1 className="text-3xl text-blue-600 font-bold mb-6 text-center">Login</h1>
+                    <h1 className="text-3xl text-blue-600 font-bold mb-6 text-center" data-test="elms-login-header">Login</h1>
                     <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 flex flex-col">
 
                     
@@ -80,6 +80,7 @@ const Login= () => {
                             {...register("email")}
                             placeholder="Email"
                             className="border border-gray-300 rounded w-full p-2 text-lg"
+                            data-test="elms-login-email-input"
 
                         />
                         {
@@ -93,6 +94,7 @@ const Login= () => {
                             {...register("password")}
                             placeholder="Password"
                             className="border border-gray-300 rounded w-full p-2 text-lg"
+                            data-test="elms-login-password-input"
                         />
                         {
                             errors.password && (
@@ -102,7 +104,7 @@ const Login= () => {
 
 
 
-                        <button type="submit" className=" w-full mt-4 bg-blue-600 text-white rounded-xl px-6 py-3 hover:bg-blue-700 transition" disabled={isLoading}>
+                        <button type="submit" className=" w-full mt-4 bg-blue-600 text-white rounded-xl px-6 py-3 hover:bg-blue-700 transition" data-test="elms-login-submit-button" disabled={isLoading}>
                             {
                                 isLoading ? (
                                     <>

@@ -53,6 +53,7 @@ const CreateEmployeeModal = ({ onClose }: CreateEmployeeModalProps) => {
             onChange={(e) => setStaffid(Number(e.target.value))}
             className="input border rounded w-full"
             required
+            data-test='staffid-input'
           />
         </div>
         <div className="py-2">
@@ -63,6 +64,7 @@ const CreateEmployeeModal = ({ onClose }: CreateEmployeeModalProps) => {
             onChange={(e) => setUsername(e.target.value)}
             className="input border rounded w-full"
             required
+            data-test='name-input'
           />
         </div>
 
@@ -74,6 +76,7 @@ const CreateEmployeeModal = ({ onClose }: CreateEmployeeModalProps) => {
             onChange={(e) => setEmail(e.target.value)}
             className="input border rounded w-full"
             required
+            data-test='email-input'
           />
         </div>
 
@@ -116,11 +119,12 @@ const CreateEmployeeModal = ({ onClose }: CreateEmployeeModalProps) => {
             onChange={(e) => setPassword(e.target.value)}
             className="input border rounded w-full"
             required
+            data-test='pass-input'
           />
         </div>
 
         <div className="modal-action">
-          <button type="submit" className="bg-gray-200 text-blue-700 font-semibold px-8 py-3 rounded-xl shadow hover:bg-blue-50 transition">Create</button>
+          <button type="submit" data-test='create-button'className="bg-gray-200 text-blue-700 font-semibold px-8 py-3 rounded-xl shadow hover:bg-blue-50 transition">Create</button>
           <button type="button" className="bg-gray-200 text-blue-700 font-semibold px-8 py-3 rounded-xl shadow hover:bg-blue-50 transition" 
           onClick={onClose}>Cancel</button>
         </div>

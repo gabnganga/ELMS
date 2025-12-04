@@ -39,14 +39,15 @@ export default function LeaveDashboard() {
 
   return (
     <div className="p-6 space-y-6">
-      <h2 className="text-2xl font-bold">Leave Request Dashboard</h2>
+      <h2 className="text-2xl font-bold" data-test='leave-request-header' >Leave Request Dashboard</h2>
 
       {/* Leave Request Form */}
       <div className="border p-4 rounded">
-        <h3 className="font-semibold mb-2">Apply for Leave</h3>
+        <h3 className="font-semibold mb-2" data-test='apply-leave'>Apply for Leave</h3>
 
         <select
           className="border p-2 mr-2"
+          data-test='leave-type'
           value={form.leavetypeid}
           onChange={(e) => setForm({ ...form, leavetypeid: Number(e.target.value) })}
         >
@@ -63,6 +64,7 @@ export default function LeaveDashboard() {
           className="border p-2 mr-2"
           value={form.start_date}
           onChange={(e) => setForm({ ...form, start_date: e.target.value })}
+          data-test='start-date'
         />
 
         <input
@@ -70,9 +72,11 @@ export default function LeaveDashboard() {
           className="border p-2 mr-2"
           value={form.end_date}
           onChange={(e) => setForm({ ...form, end_date: e.target.value })}
+          data-test='end-date'
         />
 
         <button
+          data-test='submit'
           className="bg-blue-600 text-white px-4 py-2 rounded"
           onClick={handleSubmit}
         >
@@ -82,9 +86,9 @@ export default function LeaveDashboard() {
 
       {/* History Table */}
       <div className="border p-4 rounded">
-        <h3 className="font-semibold mb-2">Leave History</h3>
+        <h3 className="font-semibold mb-2" data-test='history-header'>Leave History</h3>
 
-        <table className="w-full border">
+        <table className="w-full border" data-test='history-table'>
           <thead className="bg-gray-100">
             <tr>
               <th>Leave Type</th>
@@ -106,6 +110,7 @@ export default function LeaveDashboard() {
                 <td className="border p-2">{leave.comment ||"Awaiting Review"}</td>
                 <td className="flex  border p-6 space-x-2">
                 <button
+                data-test='edit'
                  disabled={leave.status == "Rejected" || leave.status == "Approved"}
                   onClick={() => setEditingLeave(leave)}
                   className={` px-2 py-1 rounded text-white ${
@@ -125,6 +130,7 @@ export default function LeaveDashboard() {
 
 
                   <button
+                  data-test='delete'
                    disabled={leave.status == "Rejected" || leave.status == "Approved"}
                     onClick={() => handleDelete(leave.leaveid)}
                     
